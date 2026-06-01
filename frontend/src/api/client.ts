@@ -2,7 +2,8 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '',   // vite proxy handles /auth /chat /admin → localhost:5000
+  // Берем адрес из переменной окружения, либо пустая строка для локальной разработки
+  baseURL: import.meta.env.VITE_API_URL || '', 
 })
 
 api.interceptors.request.use((config) => {
