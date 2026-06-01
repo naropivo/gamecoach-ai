@@ -1,0 +1,76 @@
+/* HistoryPage.css */
+
+.history-page {
+  padding: 28px 32px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 50vh;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.dialogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.dialog-card {
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.dialog-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.dc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.dc-icon { font-size: 22px; }
+.dc-date { font-size: 12px; }
+.dc-title { font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+.dc-preview { font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+.dc-footer { padding-top: 8px; border-top: 1px solid var(--border); }
+
+/* Shared */
+.page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  username  String?
+  game      String   @default("chess")
+  role      String   @default("player")
+  createdAt DateTime @default(now())
+
+  dialogs Dialog[]
+}
+
+model Dialog {
+  id        String    @id @default(cuid())
+  title     String    @default("Новый чат")
+  userId    String
+  createdAt DateTime  @default(now())
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages Message[]
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  dialogId  String
+  role      String   // "user" | "assistant"
+  content   String
+  createdAt DateTime @default(now())
+
+  dialog Dialog @relation(fields: [dialogId], references: [id], onDelete: Cascade)
+}

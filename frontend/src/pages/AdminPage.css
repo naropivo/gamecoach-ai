@@ -1,0 +1,82 @@
+/* AdminPage.css */
+.admin-page {
+  padding: 28px 32px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 24px 16px;
+  transition: all var(--transition);
+}
+.stat-card:hover { border-color: var(--accent); }
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent-bright);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label { font-size: 13px; }
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Games breakdown */
+.games-breakdown { display: flex; flex-direction: column; gap: 10px; }
+.game-bar-row { display: flex; align-items: center; gap: 12px; }
+.game-bar-label { width: 160px; font-size: 13px; text-transform: capitalize; flex-shrink: 0; }
+.game-bar-track {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-surface);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.game-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  border-radius: 100px;
+  transition: width 0.6s ease;
+  min-width: 4px;
+}
+.game-bar-count { width: 32px; text-align: right; font-size: 13px; color: var(--text-secondary); }
+
+/* Table */
+.table-wrapper { overflow-x: auto; }
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.admin-table th {
+  text-align: left;
+  padding: 10px 12px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid var(--border);
+}
+.admin-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+}
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: var(--bg-hover); }
