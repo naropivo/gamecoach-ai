@@ -1,12 +1,10 @@
 {
-  "name": "frontend",
+  "name": "gamecoach-ai-root",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "build": "cd frontend && npm install && npm run build",
     "start": "node server.js"
   },
   "dependencies": {
