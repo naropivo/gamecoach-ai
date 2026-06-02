@@ -1,8 +1,0 @@
-[phases.build]
-cmds = [
-  "npm run build:frontend",
-  "npm run build:backend"
-]
-
-[start]
-cmd = "cd backend && node dist/app.js"
