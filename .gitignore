@@ -3,6 +3,8 @@ backend/node_modules/
 frontend/node_modules/
 backend/dist/
 frontend/dist/
+backend/public/*
+!backend/public/.gitkeep
 .env
 backend/.env
 *.log
