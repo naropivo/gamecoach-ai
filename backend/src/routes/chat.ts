@@ -24,7 +24,7 @@ async function callHuggingFace(
   if (!token) throw new Error("HUGGINGFACE_TOKEN не задан");
 
   // Mistral-7B — открытая модель, не требует доп. доступа
-  const MODEL = "mistralai/Mistral-7B-Instruct-v0.3";
+  const MODEL = "HuggingFaceH4/zephyr-7b-beta";
 
   const resp = await fetch(
     `https://router.huggingface.co/hf-inference/models/${MODEL}/v1/chat/completions`,
