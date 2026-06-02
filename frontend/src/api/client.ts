@@ -1,9 +1,9 @@
-// src/api/client.ts
 import axios from 'axios'
 
+// На production (Railway) — фронт и бэкенд на одном домене, baseURL пустой
+// На localhost — Vite proxy перенаправляет /auth /chat /admin → :5000
 const api = axios.create({
-  // Берем адрес из переменной окружения, либо пустая строка для локальной разработки
-  baseURL: import.meta.env.VITE_API_URL || '', 
+  baseURL: '',
 })
 
 api.interceptors.request.use((config) => {
@@ -40,7 +40,6 @@ export const chatApi = {
   createDialog: (title?: string) => api.post('/chat/dialogs', { title }),
   deleteDialog: (id: string) => api.delete(`/chat/dialogs/${id}`),
   getMessages: (dialogId: string) => api.get(`/chat/dialogs/${dialogId}/messages`),
-  // Добавили signal третьим параметром для возможности отмены запроса пользователем
   sendMessage: (dialogId: string, message: string, signal?: AbortSignal) =>
     api.post('/chat/send', { dialogId, message }, { signal }),
 }
